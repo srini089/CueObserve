@@ -1,4 +1,5 @@
-Flask==1.0.2
-gunicorn==20.0.4
-slack-sdk==3.9.1
-Faker==11.3.0
+Flask==2.3.3
+gunicorn==22.0.0
+slack-sdk==3.33.2
+Faker==11.4.0
+itsdangerous==2.2.0

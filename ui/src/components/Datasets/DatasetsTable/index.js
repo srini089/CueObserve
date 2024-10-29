@@ -3,7 +3,7 @@ import TimeAgo from 'react-timeago';
 import _ from "lodash";
 import datasetService from "services/datasets";
 import style from "./style.module.scss";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Table,
   Button,
@@ -18,7 +18,7 @@ import { search } from "services/general.js";
 
 export default function DatasetsTable(props) {
   const [datasets, setDatasets] = useState(null);
-  const history = useHistory();
+  const history = useNavigate();
   const [searchText, setSearchText] = useState("");
   const [searchedDatasets, setSearchedDatasets] = useState([]);
 

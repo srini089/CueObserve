@@ -2,9 +2,9 @@ version: '3.3'
 services:
   cueo-nginx:
     container_name: "cueo-nginx"
-    image: nginx:1.17
+    image: nginx:1.23.3
     volumes:
-      - ./ui/nginx-dev.conf.template:/etc/nginx/conf.d/nginx-dev.conf.template
+      - ./ui/nginx-dev.conf.template:/etc/nginx/conf.d/nginx.conf.template
       - ./ui/nginx-entrypoint.sh:/etc/nginx/conf.d/nginx-entrypoint.sh
     command:
       bash -c "./etc/nginx/conf.d/nginx-entrypoint.sh && nginx -g 'daemon off;'"

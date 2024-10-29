@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ReactNotification from 'react-notifications-component';
 
 // components
@@ -103,7 +103,7 @@ export default function Admin() {
           <AdminNavbar />
           <HeaderStats />
           <div className="px-0 md:px-0 mx-auto w-full" style={{minHeight: "calc(100vh - 0px)", padding: "1rem 0rem 0 0rem"}}>
-            <Switch>
+            <Routes>
               <Route path="/anomaly/:anomalyId" exact component={Anomaly} />
               <Route path="/anomalies" exact component={Anomalys} />
               <Route path="/dataset/create" exact component={Dataset} />
@@ -113,18 +113,18 @@ export default function Admin() {
               <Route path="/anomalyDefinitions" exact component={AnomalyDefTable} />
               <Route path="/schedules" exact component={Schedules} />
               <Route path="/settings" exact component={Settings} />
-              <Redirect from="/" to="/anomalies" />
-            </Switch>
+              <Navigate from="/" to="/anomalies" />
+            </Routes>
           </div>
         </div>
       </GlobalContextProvider>
       : 
       <div>
         {loader && isAuthRequired ?
-          <Switch>
+          <Routes>
             <Route path="/account/login"   component={()=>(<Login loggedIn={loggedIn}/>)} />
-            <Redirect from="/" to="/account/login" />
-          </Switch>
+            <Navigate from="/" to="/account/login" />
+          </Routes>
            : ""}  
       </div>
       }

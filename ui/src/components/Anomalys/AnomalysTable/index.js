@@ -3,7 +3,7 @@ import TimeAgo from 'react-timeago';
 import _ from "lodash";
 import anomalyService from "services/anomalys";
 import style from "./style.module.scss";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {search} from "services/general.js"
 import {
   Table,
@@ -59,7 +59,7 @@ export default function AnomalysTable(props) {
   sorterRef.current = sorter;
   const searchTextRef = useRef(searchText);
   searchTextRef.current = searchText;
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(()=>{
     if (!anomalys){

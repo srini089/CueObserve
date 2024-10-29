@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import { Button, Switch } from "antd";
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import style from "./style.module.scss";
 import userService from "services/user"
 import Admin from "layouts/Admin"

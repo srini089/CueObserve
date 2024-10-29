@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import style from "./style.module.scss";
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-xcode";
@@ -42,7 +42,7 @@ export default function Dataset(props) {
 
   const [isDataReceived, setIsDataReceived] = useState(false);
   const params = useParams()
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(()=>{
     if (params.datasetId && !isDataReceived){

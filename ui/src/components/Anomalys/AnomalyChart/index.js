@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import style from "./style.module.scss";
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Chart, Geom, Axis, Tooltip, View, Legend } from "bizcharts";
 
 export default function AnomalyChart(props) {
