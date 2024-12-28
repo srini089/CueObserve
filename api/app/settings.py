@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-y7^!ee%k(xh7+xdyug$65v1@8@q-ui8=s5f2ucquxof&-i&g_u
 DEBUG = os.environ.get("DEBUG", False)
 SITE_ID = 1
 
-CSRF_TRUSTED_ORIGINS = ["localhost"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost"]
 CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
 CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = ["*", "localhost"]
@@ -90,6 +90,7 @@ MIDDLEWARE = [
     "app.middlewares.DisableCsrfCheck",
     "app.middlewares.LoginRequiredMiddleware",
     # "app.middlewares.RestrictApiMiddleware"
+    "allauth.account.middleware.AccountMiddleware",
 ]
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
